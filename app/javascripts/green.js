@@ -17,7 +17,7 @@ window.GreenChainAPI = {
 				"o3": 20
 			}
 		};
-	}
+	},
 
 	unmarshallList: function unmarshallList(marshalledList) {
 		let unmarshallList = ['magic1', 'magic2'];
@@ -26,7 +26,7 @@ window.GreenChainAPI = {
 			result.push(unmarshallBlock(marshalledBlock));
 		});
 		return result;
-	}
+	},
 
 	fetchBlocks: function fetchBlocks(address) {
 		return unmarshallList(GreenChain.fetchBlocks(address));
