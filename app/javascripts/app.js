@@ -17,6 +17,7 @@ var MetaCoin = contract(metacoin_artifacts);
 var accounts;
 var account;
 
+
 window.App = {
   start: function() {
     var self = this;
@@ -84,7 +85,7 @@ window.App = {
       self.setStatus("Error sending coin; see log.");
     });
   }
-};
+};  
 
 window.addEventListener('load', function() {
   // Checking if Web3 has been injected by the browser (Mist/MetaMask)

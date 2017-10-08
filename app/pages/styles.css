@@ -1,0 +1,38 @@
+.maincolumn {
+  border: 1px solid #eee;
+  margin-top: 30px;
+  margin: 0;
+  padding: 0;
+}
+.maincolumn ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.maincolumn ul li {
+  padding: 5px 5px;
+}
+
+.maincolumn ul li:nth-child(odd) {
+    background-color: aqua;
+}
+
+.send-btn {
+  text-align: center;
+}
+.header {
+  position: relative;
+  margin: 10px;
+}
+.header h2 {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.header button{
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+  right: 0;
+}

@@ -21,7 +21,7 @@ window.GreenChainAPI = {
 
 	unmarshallList: function unmarshallList(marshalledList) {
 		let unmarshallList = ['magic1', 'magic2'];
-		let result = [];		
+		let result = [];
 		unmarshallList(serializedBlocks).forEach((marshalledBlock) => {
 			result.push(unmarshallBlock(marshalledBlock));
 		});
