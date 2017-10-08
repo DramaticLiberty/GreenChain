@@ -5,7 +5,9 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../app/pages/styles.css">
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
   <script src="./app.js"></script>
+  <script src="../app/javascripts/company.js"></script>
 </head>
 <body>
   <div class="row header">
@@ -19,17 +21,26 @@
   <div class="row layout">
     <div class="col-md-3 sidecolumn"></div>
     <div class="col-xs-12 col-md-6 maincolumn">
-      <ul>
-        <li>item1</li>
-        <li>item1</li>
-        <li>item1</li>
-        <li>item1</li>
-        <li>item1</li>
-        <li>item1</li>
-        <li>item1</li>
-        <li>item1</li>
-        <li>item1</li>
-        <li>item1</li>
+      <ul class'chain-list'>
+
+
+
+        <script>
+          var chain = window.GreenChainAPI.fetchAllBlocks();
+          var list = $(".maincolumn").append('<ul></ul>').find('ul');
+          for (var i = 0; i < chain.length; i++) {
+            list.append('<li>'+
+                        '<div>Owner: '+chain[i].owner+'</div>'+
+                        '<div>Name: '+chain[i].name+'</div>'+
+                        '<div>Qty: '+chain[i].quantity+'</div>'+
+                        '<div>LCA: '+chain[i].lca.co2+'</div>'+
+
+                        '</li>');
+          }
+
+
+
+        </script>
       </ul>
 
     </div>
@@ -37,7 +48,7 @@
   </div>
 
 </body>
-<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+
 <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="../app/javascripts/company.js"></script>
+
 </html>

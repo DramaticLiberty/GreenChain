@@ -7,7 +7,7 @@ var GreenChain = contract(green_artifacts);
 window.GreenChainAPI = {
 
 	unmarshallBlock: function unmarshallBlock(marshalledBlock) {
-		data = {
+		var data = {
 			"magic0": {
 				"uniqueID": 123,
 				"owner": "SolidMetal srl",
