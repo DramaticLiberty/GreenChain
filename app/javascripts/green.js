@@ -57,24 +57,29 @@ window.GreenChainAPI = {
 				}
 			},
 		};
-		return ;
+		return data[marshalledBlock];
 	},
 
 	unmarshallList: function unmarshallList(marshalledList) {
-		let unmarshallList = ["magic0", "magic01", "magic1", "magic2", "magic3"];
+
+		let unmarshallBlocks = ["magic0", "magic01", "magic1", "magic2", "magic3"];
 		let result = [];
-		unmarshallList(serializedBlocks).forEach((marshalledBlock) => {
-			result.push(unmarshallBlock(marshalledBlock));
+		unmarshallBlocks.forEach((marshalledBlock) => {
+			result.push(GreenChainAPI.unmarshallBlock(marshalledBlock));
 		});
 		return result;
 	},
 
 	fetchBlocks: function fetchBlocks(address) {
-		return unmarshallList(GreenChain.fetchBlocks(address));
+		// let result = GreenChain.fetchAllBlocks();
+		let result = "abc";
+		return GreenChainAPI.unmarshallList();
 	},
 
 	fetchAllBlocks: function fetchAllBlocks() {
-		return unmarshallList(GreenChain.fetchAllBlocks());
+		// let result = GreenChain.fetchAllBlocks();
+		let result = "abc";
+		return GreenChainAPI.unmarshallList(result);
 	},
 
 	addBlock: function addBlock(name, quantity, blueprint) {
