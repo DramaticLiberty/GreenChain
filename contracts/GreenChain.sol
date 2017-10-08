@@ -1,4 +1,4 @@
-pragma solidity ^0.4.2;
+pragma solidity ^0.4.15;
 
 contract GreenChain {
 	struct GreenBlock {
@@ -6,7 +6,7 @@ contract GreenChain {
     	address owner;
     	string name;
     	uint quantity;
-		mapping (string => double) lca;
+		mapping (string => bytes32) lca;
 	}
 
   	struct GreenBlockBlueprint {
@@ -15,21 +15,31 @@ contract GreenChain {
 
   	uint blkid;
   	mapping (uint => GreenBlock) inventory;
+	mapping (string => bytes32) emptyLCA;
+
 
 	function GreenChain() {
 		blkid = 0;
 	}
 
-  	function addBlock(string name, uint quantity, GreenBlockBlueprint blk) {
+  	function addBlock(string name, uint quantity, string blk) {
+  		// addBlock(string name, uint quantity, GreenBlockBlueprint blk)
   		blkid = blkid++;
-  		inventory[blkid] = GreenBlock(blkid, msg.sender, name, quantity, blk[0].lca);
+  		GreenBlock memory gb = GreenBlock(blkid, msg.sender, name, quantity);
+
+	  	mapping (string => bytes32) aggLCA = emptyLCA;
+  		for (uint same3 = 0; same3 < 1; same3++) {
+        }
+  		inventory[blkid] = gb;
   	}
 
-  	function fetchAllBlocks() constant returns (mapping (uint => GreenBlock)) {
-    	return inventory;
+  	function fetchAllBlocks() constant returns (string) {
+  		// this actually returns (mapping (uint => GreenBlock))
+    	return "inventory";
   	}
 
-  	function fetchBlocks(address owner) constant returns (mapping (uint => GreenBlock)) {
-    	return inventory;
+  	function fetchBlocks(address owner) constant returns (string) {
+  		// this actually returns (mapping (uint => GreenBlock))
+    	return "inventory";
   	}
 }
