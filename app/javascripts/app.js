@@ -44,10 +44,6 @@ window.App = {
     });
   },
 
-  setStatus: function(message) {
-    var status = document.getElementById("status");
-    status.innerHTML = message;
-  },
 
   refreshBalance: function() {
     var self = this;
@@ -85,7 +81,7 @@ window.App = {
       self.setStatus("Error sending coin; see log.");
     });
   }
-};  
+};
 
 window.addEventListener('load', function() {
   // Checking if Web3 has been injected by the browser (Mist/MetaMask)
@@ -99,5 +95,5 @@ window.addEventListener('load', function() {
     window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
   }
 
-  App.start();
+
 });
