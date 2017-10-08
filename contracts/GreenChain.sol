@@ -1,4 +1,5 @@
 pragma solidity ^0.4.15;
+import "jsmnsol-lib/JsmnSolLib.sol";
 
 contract GreenChain {
 	struct GreenBlock {
@@ -26,6 +27,7 @@ contract GreenChain {
   		// addBlock(string name, uint quantity, GreenBlockBlueprint blk)
   		blkid = blkid++;
   		GreenBlock memory gb = GreenBlock(blkid, msg.sender, name, quantity);
+  		
 
 	  	mapping (string => bytes32) aggLCA = emptyLCA;
   		for (uint same3 = 0; same3 < 1; same3++) {
