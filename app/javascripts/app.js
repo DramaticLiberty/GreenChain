@@ -16,7 +16,8 @@ var MetaCoin = contract(metacoin_artifacts);
 // For application bootstrapping, check out window.addEventListener below.
 var accounts;
 var account;
-
+import './green';
+import './company';
 
 window.App = {
   start: function() {

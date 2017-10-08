@@ -55,14 +55,14 @@ window.GreenChainAPI = {
 					"co2": 82,
 					"o3": 21
 				}
-			}, 
+			},
 		};
 		return ;
 	},
 
 	unmarshallList: function unmarshallList(marshalledList) {
 		let unmarshallList = ["magic0", "magic01", "magic1", "magic2", "magic3"];
-		let result = [];		
+		let result = [];
 		unmarshallList(serializedBlocks).forEach((marshalledBlock) => {
 			result.push(unmarshallBlock(marshalledBlock));
 		});
