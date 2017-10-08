@@ -70,11 +70,15 @@ window.GreenChainAPI = {
 	},
 
 	fetchBlocks: function fetchBlocks(address) {
-		return GreenChainAPI.unmarshallList(GreenChain.fetchBlocks(address));
+		// let result = GreenChain.fetchAllBlocks();
+		let result = "abc";
+		return GreenChainAPI.unmarshallList();
 	},
 
 	fetchAllBlocks: function fetchAllBlocks() {
-		return GreenChainAPI.unmarshallList(GreenChain.fetchAllBlocks());
+		// let result = GreenChain.fetchAllBlocks();
+		let result = "abc";
+		return GreenChainAPI.unmarshallList(result);
 	},
 
 	addBlock: function addBlock(name, quantity, blueprint) {
