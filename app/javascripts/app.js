@@ -17,6 +17,7 @@ var MetaCoin = contract(metacoin_artifacts);
 var accounts;
 var account;
 
+
 window.App = {
   start: function() {
     var self = this;
@@ -43,10 +44,6 @@ window.App = {
     });
   },
 
-  setStatus: function(message) {
-    var status = document.getElementById("status");
-    status.innerHTML = message;
-  },
 
   refreshBalance: function() {
     var self = this;
@@ -98,5 +95,5 @@ window.addEventListener('load', function() {
     window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
   }
 
-  App.start();
+
 });
